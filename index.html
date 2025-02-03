@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        html, body {
+            height: 100%; 
+            margin: 0;
+            
+        }
+
+        body {
+            background: url(bg.png)center center/cover;
+            backdrop-filter: blur(2px);
+            text-align: center;
+            background-size: cover; 
+            background-position: center;
+            min-height: 100%;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background:  #5654b7;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            border-bottom: 4px solid #3b367d;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #3b367d;
+            background-color: rgba(168, 230, 245, 0.837);
+            border-radius: 4px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 70px;
+            
+        }
+        .card {
+            background: #5654b7;
+            border-radius: 10px;
+            overflow: auto;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(252, 207, 229, 0.937);
+            text-align: justify;
+            color: rgb(88, 169, 255);
+            padding: 20px;
+            /* height: 600px; */
+            margin: 5px;
+            
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: 2px dashed rgb(255, 193, 244)
+        }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 22px;
+        }
+        .card p {
+            color: #f0c6ff;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 5px;
+            max-height: 300px;
+            overflow: auto;
+        }
+        ::-webkit-scrollbar {
+            width: 5px;
+            background-color: rgb(180, 180, 241);
+        }
+
+
+
+        @media (max-width: 768px) {
+
+            body {
+                background-size: cover; 
+                background-attachment: scroll;
+                height: 100%;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90%;
+            }
+        }
+
+        @media (max-width :551px) {
+            .nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.8);
+                padding: 10px;
+                border-radius: 5px;
+                width: 200px;
+            }
+            .nav.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav').classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div>GELA</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="nav">
+            <a href="#">HOME</a>
+            <a href="#">ABOUT ME</a>
+            <a href="#">CONTACTS</a>
+            <a href="#">SKILLS</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <img src="myimg2.png" alt="me">
+            <h3>ABOUT ME</h3>
+            <p>I'm Mary Angela Remojo, 19 years old. I am an aspiring artist, and an IT student from Dalubhasaan ng Lungosd ng Lucena. I like the color blue, why is my website purple you asked? Just because.</p>
+        </div>
+        <div class="card">
+            <img src="arts.png" alt="hobby">
+            <h3>HOBBY</h3>
+            <p>I like to draw. Ever since I was a child, I’ve dreamed of becoming an animator someday. I was a Technical Drafting student during my junior high school days but shifted to ICT in senior high. I realized that art is just a hobby, and I don’t want to make a living out of it. Now, I have a new dream—to become a game or graphic designer. If not, I want a stable job with a high salary so I can buy anything I want.</p> 
+        </div>
+        <div class="card">
+            <img src="myimg.jpg" alt="crush">
+            <h3>MY CRUSH</h3>
+            <p>Words can't express how much I like her, but numbers can—100/100. Kidding aside, personality-wise, she's the complete opposite of me. I like how honest she is and how she's not afraid to stand up for her friends. I really admire her personality and how hardworking she is, though sometimes I worry that she might be overworking herself for the sake of others. I love her smile, her laugh, and her voice. The way her eyes light up when she smiles is my favorite feature. It's given that she's pretty, BUT people don’t realize just how cute she is—OMG. Some of her actions are just adorable! Her favorite animal? Her favorite color? EVERYTHING about her is cute. I don’t remember exactly when or how I started liking her, but these are the things that made me fall for her even more. UWAAAA!</p>
+        </div>
+    </div>
+</body>
+</html>
